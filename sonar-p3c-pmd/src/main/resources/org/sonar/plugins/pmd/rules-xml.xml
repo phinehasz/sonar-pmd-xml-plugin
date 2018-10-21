@@ -1,0 +1,8 @@
+<rules>
+
+  <rule key="MistypedCDATASection">
+    <priority>MAJOR</priority>
+    <configKey><![CDATA[rulesets/xml/basic.xml/MistypedCDATASection]]></configKey>
+   </rule>
+
+</rules>
