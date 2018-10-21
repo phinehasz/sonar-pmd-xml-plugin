@@ -1,0 +1,4 @@
+
+testcase/target/sonar/.sonar_lock
+testcase/target/sonar/pmd-xml.xml
+testcase/target/sonar/report-task.txt
