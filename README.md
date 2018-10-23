@@ -19,6 +19,9 @@ Based on my plugin, you need to configure 4 files.
 just copy like what I have done.  :)  
 ***
 ## What I have done  
+I modified some codes so the original sonar-pmd-plugin can support configure pmd-xml rule now!  
+***
+## Chinese Tutorial
 **需求**  
 sonar-pmd插件只有添加了pmd的java规则,现在需要添加pmd的xml规则,更准确是添加自定义的xml规则.  
 
