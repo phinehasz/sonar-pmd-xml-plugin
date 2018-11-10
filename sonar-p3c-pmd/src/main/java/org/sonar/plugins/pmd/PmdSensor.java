@@ -66,7 +66,8 @@ public class PmdSensor implements Sensor {
 
   @Override
   public void analyse(Project project, SensorContext context) {
-    try {
+	  String branch = project.getBranch();
+	  try {
       Report report = executor.execute();
       for (RuleViolation violation : report) {
         pmdViolationRecorder.saveViolation(violation);
