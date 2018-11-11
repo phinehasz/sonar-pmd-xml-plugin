@@ -67,7 +67,9 @@ public class PmdSensor implements Sensor {
   @Override
   public void analyse(Project project, SensorContext context) {
 	  String branch = project.getBranch();
+	  String description = project.getDescription();
 	  SonarProperty.getProperties().put("branch", branch);
+	  SonarProperty.getProperties().put("description", description);
 	  try {
       Report report = executor.execute();
       for (RuleViolation violation : report) {
