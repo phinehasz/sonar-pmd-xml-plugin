@@ -16,7 +16,7 @@ Based on my plugin, you need to configure 4 files.
 `/org/sonar/l10n/pmd/rules/pmd`  
 `/com/sonar/sqale/pmd-model.xml`  
 `/org/sonar/l10n/pmd.properties`  
-just copy like what I have done.  :)  
+just copy like what I have done    :)  
 ***
 ## What I have done  
 I modified some codes so the original sonar-pmd-plugin can support configure pmd-xml rule now!  
