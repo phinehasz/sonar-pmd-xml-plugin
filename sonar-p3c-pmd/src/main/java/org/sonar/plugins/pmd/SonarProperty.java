@@ -27,7 +27,7 @@ import java.util.Map;
  */
 public class SonarProperty {
 
-	private static Map<String, String> properties;
+	private static Map<String, String> properties = new HashMap<>();
 
 	public static Map<String, String> getProperties() {
 		return properties;
