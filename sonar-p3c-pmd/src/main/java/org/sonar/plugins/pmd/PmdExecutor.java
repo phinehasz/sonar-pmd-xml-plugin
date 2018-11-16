@@ -24,6 +24,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.io.Closeables;
 import net.sourceforge.pmd.*;
+import net.sourceforge.pmd.lang.xml.XmlLanguageModule;
 import org.sonar.api.BatchExtension;
 import org.sonar.api.batch.fs.FilePredicates;
 import org.sonar.api.batch.fs.FileSystem;
@@ -85,6 +86,8 @@ public class PmdExecutor implements BatchExtension {
     PmdTemplate pmdFactory = createPmdTemplate(classLoader);
     executeRules(pmdFactory, context, javaFiles(Type.MAIN), PmdConstants.REPOSITORY_KEY);
     executeRules(pmdFactory, context, javaFiles(Type.TEST), PmdConstants.TEST_REPOSITORY_KEY);
+
+    context.setLanguageVersion(new XmlLanguageModule().getVersion(""));
     executeRules(pmdFactory, context, xmlFiles(Type.MAIN), PmdConstants.XML_REPOSITORY_KEY);
 
     pmdConfiguration.dumpXmlReport(report);
