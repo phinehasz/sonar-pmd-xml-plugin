@@ -29,7 +29,6 @@ import net.sourceforge.pmd.RuleSets;
 import net.sourceforge.pmd.SourceCodeProcessor;
 import net.sourceforge.pmd.lang.LanguageVersion;
 import net.sourceforge.pmd.lang.java.JavaLanguageModule;
-import net.sourceforge.pmd.lang.xml.XmlLanguageModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,7 +60,6 @@ public class PmdTemplate {
 		PMDConfiguration configuration = new PMDConfiguration();
 		List<LanguageVersion> languageVersions = new ArrayList<>();
 		languageVersions.add(languageVersion(javaVersion));
-		languageVersions.add(new XmlLanguageModule().getVersion(""));
 		configuration.setDefaultLanguageVersions(languageVersions);
 		configuration.setClassLoader(classloader);
 		configuration.setSourceEncoding(charset.name());
@@ -82,6 +80,7 @@ public class PmdTemplate {
 
 	public void process(File file, RuleSets rulesets, RuleContext ruleContext) {
 		ruleContext.setSourceCodeFilename(file.getAbsolutePath());
+		ruleContext.setAttribute("property", SonarProperty.getProperties());
 		InputStream inputStream = null;
 		try {
 			inputStream = new FileInputStream(file);
