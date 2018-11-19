@@ -2,6 +2,10 @@
 Based on sonar-pmd-plugin, a useful example to add a pmd-xml rule.   
 Acknowledge @mrprince's contribution on integrated alibaba p3c.  
 ***
+## UPDATE  
+2018/11/19
+在使用xml和java的sonar profile同时扫描时,会出现部分解析错误,修复了PmdExcutor.executePmd,将java和xml的parse区分开;  
+fix the bug of parseException when PmdExcutor parsing xml with java parser.  
 ## Usage  
 **How to use**:  
 ```
