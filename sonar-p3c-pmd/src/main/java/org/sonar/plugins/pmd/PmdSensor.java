@@ -55,6 +55,13 @@ public class PmdSensor implements Sensor {
 				|| (hasFilesToCheck(Type.MAIN, PmdConstants.XML_REPOSITORY_KEY));
 	}
 
+	/**
+	 * predicates.and(predicates.hasLanguage(Xml.KEY) seems to be no use
+	 *
+	 * @param type
+	 * @param repositoryKey
+	 * @return
+	 */
 	private boolean hasFilesToCheck(Type type, String repositoryKey) {
 		FilePredicates predicates = fs.predicates();
 		Iterable<File> files = fs.files(predicates.or(
