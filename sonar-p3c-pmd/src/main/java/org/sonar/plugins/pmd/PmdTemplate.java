@@ -80,7 +80,6 @@ public class PmdTemplate {
 
 	public void process(File file, RuleSets rulesets, RuleContext ruleContext) {
 		ruleContext.setSourceCodeFilename(file.getAbsolutePath());
-		ruleContext.setAttribute("property", SonarProperty.getProperties());
 		InputStream inputStream = null;
 		try {
 			inputStream = new FileInputStream(file);
